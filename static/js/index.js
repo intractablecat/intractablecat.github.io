@@ -9,9 +9,9 @@ function main() {
 
 function setupImageLoading() {
   const groups = [
-    'iphone',
-    'dalle2',
     'co3d',
+    'iphone',
+    'stablediffusion',
     'imagenet',
     'hypersim',
     'taskonomy',
@@ -27,9 +27,9 @@ function setupImageLoading() {
   // Start loading image groups in order.
   // This is pretty ugly! I should learn how to use promises to avoid these
   // nasty nested callbacks!
-  loadImages('iphone', function() {
-    loadImages('dalle2', function() {
-      loadImages('co3d', function() {
+  loadImages('co3d', function() {
+    loadImages('iphone', function() {
+      loadImages('stablediffusion', function() {
         loadImages('imagenet', function() {
           loadImages('hypersim', function() {
             loadImages('taskonomy');
